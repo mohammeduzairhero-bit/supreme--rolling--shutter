@@ -141,3 +141,43 @@ nav ul li a:hover { text-decoration: underline; }
   .material img, .variety img { width: 100%; }
   .cards { grid-template-columns: 1fr; }
 }
+.variety-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.variety-link .variety {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1000px;
+  transition: transform 0.3s ease;
+}
+
+.variety-link:hover .variety {
+  transform: scale(1.02);
+}
+
+.variety img {
+  width: 40%;
+  border: 2px solid #FFD700;
+  border-radius: 8px;
+}
+
+.variety div {
+  flex: 1;
+  text-align: left;
+}
+
+.variety h3 {
+  font-size: 1.6em;
+  margin-bottom: 12px;
+  color: #FFD700;
+}
+
+.variety p {
+  font-size: 1.05em;
+  color: #FFD700;
+}

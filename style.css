@@ -5,7 +5,7 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #000;   /* Black background */
-  color: #FFD700;           /* Golden text */
+  color: #fff;              /* Default text white */
   line-height: 1.8;
   scroll-behavior: smooth;
 }
@@ -18,15 +18,21 @@ section {
 /* Header */
 header {
   background: #000;
-  color: #FFD700;
   text-align: center;
   padding: 40px;
   border-bottom: 2px solid #FFD700;
-} 
-
+}
 header img { width: 120px; margin-bottom: 15px; }
-header h1 { font-size: 2.6em; letter-spacing: 1px; }
-header p { font-size: 1.2em; font-style: italic; }
+header h1 {
+  font-size: 2.6em;
+  letter-spacing: 1px;
+  color: #FFD700; /* Big heading golden */
+}
+header p {
+  font-size: 1.2em;
+  font-style: italic;
+  color: #fff; /* Small text white */
+}
 
 /* Navigation */
 nav {
@@ -44,7 +50,7 @@ nav ul {
 }
 nav ul li { margin: 0 18px; }
 nav ul li a {
-  color: #FFD700;
+  color: #FFD700; /* Nav links golden */
   font-weight: bold;
   text-decoration: none;
   font-size: 1.1em;
@@ -56,11 +62,18 @@ nav ul li a:hover { text-decoration: underline; }
   background: url('assets/hero-shutter.jpeg') no-repeat center center/cover;
   height: 500px;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  color: #FFD700; text-align: center;
+  text-align: center;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
 }
-.hero h1 { font-size: 3em; }
-.hero p { font-size: 1.4em; margin-top: 15px; }
+.hero h1 {
+  font-size: 3em;
+  color: #FFD700; /* Big hero heading golden */
+}
+.hero p {
+  font-size: 1.4em;
+  margin-top: 15px;
+  color: #fff; /* Hero subtext white */
+}
 .hero button {
   background: #FFD700; color: #000;
   padding: 14px 28px; font-size: 1.1em; border: none; border-radius: 6px;
@@ -77,8 +90,15 @@ nav ul li a:hover { text-decoration: underline; }
   width: 40%; border: 2px solid #FFD700; border-radius: 8px;
 }
 .material div, .variety div { flex: 1; text-align: left; }
-.material h3, .variety h3 { font-size: 1.6em; margin-bottom: 12px; }
-.material p, .variety p { font-size: 1.05em; }
+.material h3, .variety h3 {
+  font-size: 1.6em;
+  margin-bottom: 12px;
+  color: #FFD700; /* Headings golden */
+}
+.material p, .variety p {
+  font-size: 1.05em;
+  color: #fff; /* Paragraphs white */
+}
 
 /* Gallery */
 .product-gallery {
@@ -96,21 +116,31 @@ nav ul li a:hover { text-decoration: underline; }
   gap: 20px; margin-top: 30px;
 }
 .card {
-  background: #111; color: #FFD700;
+  background: #111;
   border: 1px solid #FFD700; border-radius: 8px;
   padding: 25px; text-align: left;
 }
-.card h4 { font-size: 1.3em; margin-bottom: 12px; }
-.card p { font-size: 1em; }
+.card h4 {
+  font-size: 1.3em;
+  margin-bottom: 12px;
+  color: #FFD700; /* Card titles golden */
+}
+.card p {
+  font-size: 1em;
+  color: #fff; /* Card body white */
+}
 
 /* Footer */
 .footer {
-  background: #000; color: #FFD700; text-align: center;
+  background: #000;
+  text-align: center;
   padding: 30px; margin-top: 40px;
   border-top: 2px solid #FFD700;
+  color: #fff; /* Footer text white */
 }
 .footer .social-icons a {
-  color: #FFD700; margin: 0 12px; text-decoration: none; font-size: 1.1em;
+  color: #FFD700; /* Social links golden */
+  margin: 0 12px; text-decoration: none; font-size: 1.1em;
 }
 .footer .social-icons a:hover { text-decoration: underline; }
 
@@ -142,12 +172,13 @@ nav ul li a:hover { text-decoration: underline; }
   .material img, .variety img { width: 100%; }
   .cards { grid-template-columns: 1fr; }
 }
+
+/* Variety link hover effect */
 .variety-link {
   text-decoration: none;
   color: inherit;
   display: block;
 }
-
 .variety-link .variety {
   display: flex;
   align-items: center;
@@ -156,29 +187,6 @@ nav ul li a:hover { text-decoration: underline; }
   max-width: 1000px;
   transition: transform 0.3s ease;
 }
-
 .variety-link:hover .variety {
   transform: scale(1.02);
-}
-
-.variety img {
-  width: 40%;
-  border: 2px solid #FFD700;
-  border-radius: 8px;
-}
-
-.variety div {
-  flex: 1;
-  text-align: left;
-}
-
-.variety h3 {
-  font-size: 1.6em;
-  margin-bottom: 12px;
-  color: #FFD700;
-}
-
-.variety p {
-  font-size: 1.05em;
-  color: #FFD700;
 }

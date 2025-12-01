@@ -69,3 +69,24 @@ const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll
 faders.forEach(fader => {
   appearOnScroll.observe(fader);
 });
+function sendWhatsAppMessage() {
+  const name = document.getElementById('name').value.trim();
+  const phone_number = document.getElementById('phonenumber').value.trim();
+  const requirements = document.getElementById('requirements').value.trim();
+  
+  const businessPhone = "919894861777"; // YOUR business number
+  const now = new Date().toLocaleString();
+  
+  // Format the message without the email line
+  const message = `📩 Supreme Rolling Shutters Quote Request\n\n👤 Name: ${name}\n📞 User Phone: ${phonenumber}\n📝 Details: ${requirements}\n\n🕒 Sent on: ${now}`;
+  
+  const url = `wa.me{businessPhone}?text=${encodeURIComponent(message)}`;
+  
+  window.open(url, '_blank');
+  
+  // Close modal and clear fields
+  document.getElementById('quoteModal').style.display = 'none';
+  document.getElementById('name').value = '';
+  document.getElementById('phonenumber').value = '';
+  document.getElementById('requirements').value = '';
+}

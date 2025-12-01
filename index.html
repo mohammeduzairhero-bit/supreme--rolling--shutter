@@ -180,10 +180,20 @@
   <!-- Testimonials -->
   <section class="content hidden" id="testimonials">
     <h2>What our clients say</h2>
-    <div class="cards">
-      <div class="card"><p>"Professional installation and excellent quality — our warehouse gates operate flawlessly."</p></div>
-      <div class="card"><p>"The aluminum shutters look premium and are super smooth. Perfect for our showroom."</p></div>
-      <div class="card"><p>"Fire-rated shutters gave us peace of mind. Supreme delivered on time and to spec."</p></div>
+    <div class="card">
+      <p>"Excellent service and durable shutters. The team was very professional during installation."</p>
+      <span class="author">Google Review – Local Business</span>
+    </div>
+    <div class="card">
+      <p>"Highly recommended! Supreme Rolling Shutters provided quick delivery and the product quality is top-notch."</p>
+      <span class="author">Google Review – Verified Customer</span>
+    </div>
+    <div class="card">
+      <p>"Affordable pricing and reliable after-sales support. Very satisfied with their work."</p>
+      <span class="author">Google Review – Residential Client</span>
+    </div>
+
+
     </div>
   </section>
 
@@ -218,8 +228,8 @@
   <p>&copy; 2025 Supreme Rolling Shutters. All rights reserved made by mohammed uzair.</p>
   <div class="social-icons">
     <a href="https://www.facebook.com/profile.php?id=61584380481373" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com/supremerollingshutters" target="_blank">Instagram</a>
-    <a href="https://www.justdial.com/Virudhunagar/Supreme-rolling-shutters-Rajapalayam/9999P4562-4562-190521153514-U1B8_BZDET" target="_blank">Justdial</a>
+    <a href="https://www.instagram.com/supreme_rolling_shutters_?igsh=anVyZHQxbXdpNG50&utm_source=qr" target="_blank">Instagram</a>
+    <a href="https://www.justdial.com/Virudhunagar/Supreme-Rolling-Shutters-Rajapalayam/9999P4562-4562-240210084249-T8J6_BZDET?cat_b2b_flag=&searchfrom=lst&bd=1&mncatname=Supreme%20Rolling%20Shutters&ncatid=10170140&ftterm=Supreme%20Rolling%20Shutters&thumbnail=" target="_blank">Justdial</a>
   </div>
 </footer>
 
@@ -230,19 +240,36 @@
   <!-- Back to Top -->
   <button id="backToTop" aria-label="Back to top">↑</button>
 
-  <!-- Quote Modal -->
-  <div id="quoteModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7);">
-    <div class="modal-content" style="background:#fff; padding:20px; max-width:420px; margin:100px auto; border-radius:10px; text-align:center;">
-      <h2>Request a quote</h2>
-      <form onsubmit="sendWhatsAppMessage(); return false;">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="email" id="email" placeholder="Your Email" required />
-        <textarea id="requirements" placeholder="Your Requirements" required></textarea>
-        <button type="submit">Submit</button>
-      </form>
-      <button onclick="document.getElementById('quoteModal').style.display='none'" style="background:#555; margin-top:10px;">Close</button>
-    </div>
+<!-- Quote Modal -->
+<div id="quoteModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('quoteModal').style.display='none'">&times;</span>
+    <h2>Request a Quote via WhatsApp</h2>
+    <p>We'll open a chat with your details pre-filled. Just hit send!</p>
+    
+    <!-- onsubmit calls the JavaScript function -->
+    <form onsubmit="sendWhatsAppMessage(); return false;">
+      <div class="form-group">
+        <label><i class="fas fa-user"></i> Name</label>
+        <!-- Input needs a specific ID for the JS function to work -->
+        <input type="text" id="name" placeholder="Your full name" required>
+      </div>
+       <div class="form-group">
+        <label><i class="fas fa-phone"></i> Phone</label>
+         <!-- Input needs a specific ID for the JS function to work -->
+        <input type="tel" id="phonenumber" placeholder="+91 ..." required> 
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-comment"></i> Requirements</label>
+         <!-- Input needs a specific ID for the JS function to work -->
+        <textarea id="requirements" rows="4" placeholder="Tell us about your shutter needs" required></textarea>
+      </div>
+      
+      <button type="submit" class="btn-primary">Submit</button>
+    </form>
   </div>
+</div>
+
 
   <!-- Scripts -->
   <script>
@@ -270,11 +297,11 @@
     // Prefilled WhatsApp quote
     function sendWhatsAppMessage() {
       const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
+      const phonenumber = document.getElementById('phonenumber').value.trim();
       const requirements = document.getElementById('requirements').value.trim();
       const phone = "919894861777";
       const now = new Date().toLocaleString();
-      const message = `📩 Supreme Rolling Shutters Quote Request\n\nName: ${name}\nEmail: ${email}\nRequirements: ${requirements}\n\nThank you for reaching out.\n🕒 Sent on: ${now}`;
+      const message = `📩 Supreme Rolling Shutters Quote Request\n\nName: ${name}\nphone: ${phonenumber}\nRequirements: ${requirements}\n\nThank you for reaching out.\nOur team will contact you soon\n🕒 Sent on: ${now}`;
       const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
       window.open(url, '_blank');
       document.getElementById('quoteModal').style.display = 'none';
@@ -294,8 +321,10 @@
     src="https://www.google.com/maps/place/SUPREME+ROLLING+SHUTTERS/@9.4387648,77.5621329,17z/data=!3m1!4b1!4m6!3m5!1s0x3b06e82a9848b505:0xff4bafad86abc42e!8m2!3d9.4387595!4d77.5647078!16s%2Fg%2F11c5qtkq31?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D"
     width="100%" height="400" style="border:2px solid #FFD700; border-radius:8px;" allowfullscreen="" loading="lazy">
   </iframe>
+
+
+  
 </section>
 
 </body>
 </html>
-
